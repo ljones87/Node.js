@@ -10,10 +10,6 @@ process.stdin.on('data', function (data) {
 
   if (commands[cmd]) commands[cmd](args);
 
-
-   //process.stdout.write(cmd);
-   //process.stdout.write('\nprompt > ');
-
  });
 
 

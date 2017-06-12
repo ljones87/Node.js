@@ -16,8 +16,13 @@ module.exports = {
           process.stdout.write("\nprompt > ");
         });
   },
-  echo: function(text) {
-          process.stdout.write(text);
+  echo: function(args) {
+    const output = args.split(' ').map(function(arg) {
+      return (arg[0] === '$') ? process.env[arg.slice(1)] : arg;
+    }).join(' ');
+
+          process.stdout.write(output);
+          process.stdout.write("\nprompt > ");
    }
 
 }
